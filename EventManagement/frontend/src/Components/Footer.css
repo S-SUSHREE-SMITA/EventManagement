@@ -1,0 +1,180 @@
+/* ============================================
+   FOOTER — Dark Premium Theme
+   Matches EventPro dark aesthetic
+   ============================================ */
+
+.footer {
+  background: #0a0a16;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 70px 0 0;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top border gradient line */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 16, 46, 0.6), rgba(168, 85, 247, 0.6), transparent);
+}
+
+/* Ambient glow */
+.footer::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(168, 85, 247, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Brand Column ── */
+.footer-brand h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #ff4d6d 0%, #e879a0 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  color: #8080a0;
+}
+
+/* ── Social Links ── */
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links a {
+  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease,
+              transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.social-links a:hover {
+  background: rgba(200, 16, 46, 0.2);
+  border-color: rgba(200, 16, 46, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(200, 16, 46, 0.2);
+}
+
+/* ── Footer Columns ── */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col h4 {
+  color: #f0eeff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.footer-col a {
+  color: #6a6a8a;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  width: fit-content;
+}
+
+.footer-col a:hover {
+  color: #e879a0;
+  padding-left: 4px;
+}
+
+.footer-col p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #6a6a8a;
+  line-height: 1.6;
+}
+
+/* ── Footer Bottom ── */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 48px auto 0;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: #4a4a6a;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+}
+
+.footer-links a {
+  color: #4a4a6a;
+  text-decoration: none;
+  font-size: 0.83rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #c084fc;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .footer { padding: 50px 0 0; }
+  .footer-container { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .footer-container { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,280 @@
+/* ============================================
+   NAVBAR — Dark Premium Theme
+   Matches EventPro dark aesthetic
+   ============================================ */
+
+.navbar-custom {
+  background: rgba(10, 10, 22, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Top gradient line */
+.navbar-custom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 16, 46, 0.6), rgba(168, 85, 247, 0.6), transparent);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  gap: 20px;
+}
+
+/* ── Logo ── */
+.nav-logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo:hover { opacity: 0.85; }
+
+/* Logo text gradient on the brand name */
+.nav-logo span {
+  background: linear-gradient(135deg, #ff4d6d 0%, #e879a0 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-icon { font-size: 1.4rem; }
+
+/* ── Nav Links ── */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.93rem;
+  transition: color 0.2s ease;
+  padding: 4px 0;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c8102e, #a855f7);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+/* ── Nav Auth ── */
+.nav-auth { position: relative; }
+
+/* Book Now / Login button */
+.btn-login {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  padding: 9px 22px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease,
+              box-shadow 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+.btn-login:hover {
+  background: linear-gradient(135deg, #8f2134 0%, #45295f 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 18px rgba(200, 16, 46, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Profile pill button */
+.btn-profile {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  padding: 7px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-profile:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Avatar circle */
+.avatar {
+  background: linear-gradient(135deg, #c8102e, #a855f7);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(200, 16, 46, 0.4);
+}
+
+.profile-name {
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.arrow {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Auth Dropdown ── */
+.auth-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 14px);
+  background: #12121f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(168, 85, 247, 0.08);
+  min-width: 210px;
+  overflow: hidden;
+  z-index: 999;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Top accent line on dropdown */
+.auth-dropdown::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.auth-dropdown a,
+.auth-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  color: #a0a0c0;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.auth-dropdown a:hover,
+.auth-dropdown button:hover {
+  background: rgba(200, 16, 46, 0.08);
+  color: #e879a0;
+}
+
+.auth-dropdown a span,
+.auth-dropdown button span { font-size: 1rem; }
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: auto;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.hamburger:hover span { background: #e879a0; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 22, 0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 18px;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
